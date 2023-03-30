@@ -37,7 +37,39 @@ class InputScreen extends StatelessWidget {
                   suffixIcon: Icons.assignment_ind_outlined,
                   icon: Icons.verified_user_outlined,
                   formProperty: 'first_name', formValues: formValues
-                )
+                ),
+                const SizedBox(height: 30),
+
+                CustomInputField(
+                  labelText: 'Apellidos',
+                  hintText: 'Apellidos del usuario',
+                  formProperty: 'last_name', formValues: formValues
+                ),
+                const SizedBox(height: 30),
+
+                CustomInputField(
+                  labelText: 'Email',
+                  hintText: 'Email del usuario',
+                  keyboardType: TextInputType.emailAddress,
+                  formProperty: 'email', formValues: formValues
+                ),
+                const SizedBox(height: 30),
+
+                CustomInputField(
+                  labelText: 'Contraseña',
+                  hintText: 'Contraseña del usuario',
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  formProperty: 'password', formValues: formValues
+                ),
+                const SizedBox(height: 30),
+                
+                CustomInputField(
+                  labelText: 'role',
+                  hintText: 'Rol del usuario',
+                  formProperty: 'role', formValues: formValues
+                ),
+                const SizedBox(height: 30),
               ],
             ),
           ),
