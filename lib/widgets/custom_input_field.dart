@@ -15,12 +15,18 @@ class CustomInputField extends StatelessWidget {
   final Map<String, String> formValues;
 
   const CustomInputField({
-    super.key, this.hintText, 
-    this.labelText, this.helperText, 
-    this.counterText, this.prefixIcon, 
-    this.suffixIcon, this.icon, 
-    this.keyboardType, this.obscureText=false, 
-    required this.formProperty, required this.formValues,
+    super.key,
+    this.hintText,
+    this.labelText,
+    this.helperText,
+    this.counterText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.icon,
+    this.keyboardType,
+    this.obscureText = false,
+    required this.formProperty,
+    required this.formValues,
   });
 
   @override
@@ -32,22 +38,21 @@ class CustomInputField extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: obscureText,
       onChanged: (value) {
-        formValues[formProperty]=value;
+        formValues[formProperty] = value;
       },
       validator: (value) {
-        if(value==null) return 'Este campo es requerido';
-        return value.length < 3 ? 'Minimo de 3 letras': null;
+        if (value == null) return 'Este campo es requerido';
+        return value.length < 3 ? 'Minimo de 3 letras' : null;
       },
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
-        hintText: 'Nombre del usuario',
-        labelText: 'Nombre',
-        helperText: 'Solo letras',
-        counterText: '3 caracteres',
-        prefixIcon: prefixIcon == null ? null : Icon(prefixIcon),
-        suffixIcon: suffixIcon == null ? null : Icon(suffixIcon),
-        icon: Icon == null ? null : Icon(icon)
-      ),
+          hintText: hintText,
+          labelText: labelText,
+          helperText: helperText,
+          counterText: counterText,
+          prefixIcon: prefixIcon == null ? null : Icon(prefixIcon),
+          suffixIcon: suffixIcon == null ? null : Icon(suffixIcon),
+          icon: icon == null ? null : Icon(icon)),
     );
   }
 }

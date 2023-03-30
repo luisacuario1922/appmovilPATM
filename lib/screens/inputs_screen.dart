@@ -75,7 +75,22 @@ class InputScreen extends StatelessWidget {
                     formValues['role']= value ?? 'Admin';
                   }
                 ),
-                const SizedBox(height: 30)
+                const SizedBox(height: 30),
+
+                ElevatedButton(
+                  onPressed: (){
+                    FocusScope.of(context).requestFocus(FocusNode());
+
+                    if(!myFormKey.currentState!.validate()){
+                      return;
+                    }
+                    print(formValues);
+                  },
+                  child: const SizedBox(
+                    width: double.infinity,
+                    child: Center(child: Text('Guardar')),
+                  ),
+                )
               ],
             ),
           ),
